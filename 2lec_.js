@@ -126,8 +126,8 @@ switch (day) {
     case 2: {
     weekDay = 'Tuesday';
     console.log('Tuesday');
-}
-break;
+    }
+    break;
 
 default:{
     console.error('You provided wrong number');
