@@ -38,7 +38,7 @@ const dog = {
  console.log(dog.toString());
 
 
-/////////
+///////// 
  const Marvel = {
     yearCreation: 1939,
     maunCharacter: 'Spider Man',
@@ -87,8 +87,6 @@ const MarvelKiller = Object.assign({}, Marvel);
 MarvelKiller.better = true;
 console.log(MarvelKiller);
  
-
-
 //////////////////////////////  МЕТОД Object.create()
 const Cat = {
     isCat: true,
@@ -125,3 +123,87 @@ const classC = {
     console.log(`${key}: ${value}`);
   }
  
+
+  /////  lecture 4
+
+  const Marvel2 = {
+    yearCreation: 1939,
+    maunCharacter: 'Spider Man',
+    mainTeam: "Avengers",
+};
+function extendObject (obj, field, value) {
+    const newObj = Object.assign({}, obj);//беремо значення з Marvel2
+    newObj[field] = value;//додаємо нове поле
+    return newObj;
+}
+const newMarvel2 = extendObject(Marvel2, 'mainVillain' , 'Venom');//Marvel2 + нове поле + нове значення
+console.log('newMarvel2 object:' , newMarvel2);
+
+
+/// варіанти функції declaration
+const square = (number) => {
+    return number * number;
+};
+const square2 = (number) => number*number;
+
+console.log(square(10));//100
+console.log(square2(3));//9
+
+
+////anonympus function
+const result = function (m, n) {
+    return m * n};
+let l = result(2, 8);
+console.log(l); //16
+
+// IIFE
+var result1 = (function () {
+    var name = "Katty";
+    return name;
+})();
+console.log(result1); // Katty
+
+//callback function
+function chooseDish() {
+    console.log("Salad");
+  }
+  function chooseName() {
+    console.log("Caesar");
+  }
+  chooseDish();//Salad
+  chooseName();//Caesar
+
+  //classes
+  class myDogs {
+    constructor(name, type) {
+      this.name = name;
+      this.type = type;
+    }
+    sayHello() {
+      return "Hello! My name is " + this.name + " and I am a " + this.type;
+    }
+  }
+  const Dog = new myDogs("Felix", "dog");
+  console.log(Dog.sayHello());
+  const Dog2 = new myDogs("Beethoven", "dog2");
+  console.log(Dog2.sayHello());
+
+  ///class shop
+  class shop {
+    constructor(name, year, type) {
+      this.name = name;
+      this.year = year;
+      this.type = type;
+    }
+    welcome () {
+      return "Welcome to " + this.name + this.type + "since " + this.year + "which located on " + this.location + " street";
+    }
+  }
+  const shop1 = new shop("Asos ", "1999", "Stuff ");
+  console.log(shop1.welcome());
+  const shop2 = new shop("Minimal ", "2019", "Jewellery ");
+  console.log(shop2.welcome());
+  const shop3 = new shop("Medicine ", "2013 ", "Clothes ");
+  shop3.location = "Horodotska"
+  console.log(shop3.welcome()); // Welcome to Medicine Clothes since 2013 which located on Horodotska street
+
