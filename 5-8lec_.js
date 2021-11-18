@@ -184,8 +184,6 @@ const words = ['Happy', 'birthday', 'to', 'you'];
 const wordsinStr = words.join(' ');
 console.log(wordsinStr);
 
-
-
 //lec 8
 
 //об'єднання
